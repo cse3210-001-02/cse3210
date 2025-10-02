@@ -1,0 +1,20 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/CVS": true
+    },
+    "hide-files.files": [],
+    "remote.extensionKind": {
+        "vadimcn.vscode-lldb": ["workspace"],
+        "llvm-vs-code-extensions.vscode-clangd": ["workspace"],
+    },
+    "files.eol": "\n",
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+    },
+
+}
