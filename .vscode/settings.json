@@ -1,20 +1,41 @@
 {
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/CVS": true
-    },
-    "hide-files.files": [],
-    "remote.extensionKind": {
-        "vadimcn.vscode-lldb": ["workspace"],
-        "llvm-vs-code-extensions.vscode-clangd": ["workspace"],
-    },
-    "files.eol": "\n",
-    "[cpp]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
-    },
-
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/CVS": true
+  },
+  "hide-files.files": [],
+  "remote.extensionKind": {
+    "vadimcn.vscode-lldb": [
+      "workspace"
+    ],
+    "llvm-vs-code-extensions.vscode-clangd": [
+      "workspace"
+    ],
+  },
+  "files.eol": "\n",
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
+  },
+  "clangd.enable": true,
+  "clang-tidy.executable": "./tools/clang-tidy",
+  "clang-tidy.blacklist": [
+    // "**/*.h"
+  ],
+  "clang-tidy.buildPath": "./builddir",
+  "editor.tabSize": 2,
+  "todo-tree.general.tags": [
+    "[ ]",
+    "[x]",
+    "BUG",
+    "FIXME",
+    "HACK",
+    "NOTE",
+    "REVIEW",
+    "TODO",
+    "LINT",
+  ],
 }

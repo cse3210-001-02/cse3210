@@ -40,4 +40,10 @@
 # debug information files
 *.dwo
 
+# meson builddir
 /builddir
+
+# meson subprojects
+subprojects/*
+!subprojects/*.wrap
+!tools/**/*

@@ -1,17 +1,20 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
-    "name": "CSE3210",
-    "image": "ghcr.io/cse3210-001-02/cse3210-container:latest",
-    "postCreateCommand": "meson setup --reconfigure builddir",
-    "initializeCommand": "docker pull ghcr.io/cse3210-001-02/cse3210-container:latest",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "vadimcn.vscode-lldb",
-                "llvm-vs-code-extensions.vscode-clangd",
-                "mesonbuild.mesonbuild",
-            ],
-        },
-    },
+  "name": "CSE3210",
+  "image": "ghcr.io/cse3210-001-02/cse3210-container:latest",
+  "postCreateCommand": "meson setup --reconfigure builddir",
+  "initializeCommand": "docker pull ghcr.io/cse3210-001-02/cse3210-container:latest",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vadimcn.vscode-lldb",
+        "mesonbuild.mesonbuild",
+        "redhat.vscode-yaml",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "CS128.cs128-clang-tidy",
+        "Gruntfuggly.todo-tree"
+      ]
+    }
+  }
 }

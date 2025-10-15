@@ -1,1 +1,28 @@
-BasedOnStyle: LLVM
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: None
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: Yes
+ColumnLimit: 80
+IncludeBlocks: Regroup
+IncludeCategories:
+  - Regex:           '<.+\.h>'
+    Priority:        1
+    SortPriority:    1
+    CaseSensitive:   true
+  - Regex:           '<.+>'
+    Priority:        1
+    SortPriority:    2
+    CaseSensitive:   true
+  - Regex:           '".+"'
+    Priority:        3
+    SortPriority:    3
+    CaseSensitive:   true
+IndentWidth: 2
+UseTab: Never
+QualifierAlignment: Custom
+QualifierOrder: [inline, static, type, const, volatile]
