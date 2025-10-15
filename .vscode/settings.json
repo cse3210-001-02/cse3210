@@ -38,4 +38,7 @@
     "TODO",
     "LINT",
   ],
+  "editor.rulers": [
+    80
+  ]
 }
