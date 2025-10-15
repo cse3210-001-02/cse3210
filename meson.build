@@ -11,7 +11,7 @@ incdir = include_directories('./include')
 
 executable(
   'a.out',
-  ['./src/main.cpp'],
+  ['./src/main.cc'],
   include_directories: incdir,
 )
 
@@ -19,7 +19,7 @@ style_test_incdir = include_directories('./test/style/include')
 
 executable(
   'style-test',
-  ['./test/style/src/qux.cpp'],
+  ['./test/style/src/qux.cc'],
   include_directories: style_test_incdir,
   install: false,
   build_by_default: false,
