@@ -39,7 +39,7 @@ CheckOptions:
   - key: readability-identifier-naming.ConstantPrefix
     value: "k"
   - key: readability-identifier-naming.FunctionCase
-    value: lower_case
+    value: CamelCase
   - key: readability-identifier-naming.GlobalFunctionCase
     value: CamelCase
   - key: readability-identifier-naming.NamespaceCase
