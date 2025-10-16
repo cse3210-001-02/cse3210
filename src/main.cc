@@ -1,9 +1,8 @@
 #include <iostream>
-
 int main() {
-  std::cout << "Hello, world!\n";
-
-  int A;
+  std::ios_base::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  std::cout.tie(nullptr);
 
   return 0;
 }
