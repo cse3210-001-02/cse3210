@@ -11,7 +11,7 @@ incdir = include_directories('./include')
 
 executable(
   'a.out',
-  ['./src/main.cc'],
+  ['./src/main.cc', './src/avltree.cc'],
   include_directories: incdir,
 )
 

@@ -15,6 +15,27 @@
       "initCommands": [
         "settings set target.disable-aslr false"
       ],
+      "stdio": [
+        "${input:inputFile}",
+        null,
+        null
+      ]
     },
   ],
+  "inputs": [
+    {
+      "id": "inputFile",
+      "type": "pickString",
+      "default": "",
+      "description": "테스트로 사용할 인풋 파일 선택",
+      "options": [
+        "./cases/sample-Basic.1.in",
+        "./cases/sample-Basic.2.in",
+        "./cases/sample-Basic.3.in",
+        "./cases/sample-Advance.1.in",
+        "./cases/sample-Advance.2.in",
+        "./cases/sample-Advance.3.in",
+      ]
+    }
+  ]
 }
