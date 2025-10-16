@@ -12,8 +12,8 @@
         "mesonbuild.mesonbuild",
         "redhat.vscode-yaml",
         "llvm-vs-code-extensions.vscode-clangd",
-        "CS128.cs128-clang-tidy",
-        "Gruntfuggly.todo-tree"
+        "Gruntfuggly.todo-tree",
+        "ms-vscode.cpptools"
       ]
     }
   }
