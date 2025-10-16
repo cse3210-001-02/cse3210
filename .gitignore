@@ -47,3 +47,4 @@
 subprojects/*
 !subprojects/*.wrap
 !tools/**/*
+!cases/*
