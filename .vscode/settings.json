@@ -26,12 +26,6 @@
     "--clang-tidy=false",
   ],
   "clangd.enable": true,
-  "clang-tidy.blacklist": [
-    ".+.h$"
-  ],
-  "clang-tidy.executable": "./tools/clang-tidy",
-  "clang-tidy.buildPath": "./builddir",
-  "clang-tidy.lintOnSave": true,
   "C_Cpp.codeAnalysis.clangTidy.enabled": true,
   "C_Cpp.codeAnalysis.clangTidy.args": [
     "--load=${workspaceFolder}/tools/clang-tidy-plugins/header-guard.so"
