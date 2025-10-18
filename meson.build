@@ -15,11 +15,13 @@ executable(
   include_directories: incdir,
 )
 
-style_test_incdir = include_directories('./test/style/include')
+gtest = subproject('gtest')
+
+style_test_incdir = include_directories('./tests/style/include')
 
 executable(
   'style-test',
-  ['./test/style/src/qux.cc'],
+  ['./tests/style/src/qux.cc'],
   include_directories: style_test_incdir,
   install: false,
   build_by_default: false,
