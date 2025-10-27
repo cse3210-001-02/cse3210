@@ -16,7 +16,7 @@ public:
   ~AVLTree() = default;
 
   Node *Find(T const &value) const;
-  Node const *Insert(T const &value);
+  Node *Insert(T const &value);
   bool IsEmpty() const;
   Node *GetPrevious(T const &value) const;
   Node *GetNext(T const &value) const;
