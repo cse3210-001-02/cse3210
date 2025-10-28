@@ -5,6 +5,7 @@ template <typename T>
 class AVLTree {
 public:
   struct Node {
+    int depth;
     int height;
     T const value;
     Node *left;
@@ -21,6 +22,10 @@ public:
   Node *GetPrevious(T const &value) const;
   Node *GetNext(T const &value) const;
   Node *GetUpperBound(T const &value) const;
+
+private:
+  void RotateLeft(Node *node);
+  void RotateRight(Node *node);
 };
 
 #endif
