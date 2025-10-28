@@ -26,6 +26,7 @@ public:
   Node *GetUpperBound(T const &value) const;
 
 private:
+  Node **Search(T const &value) const;
   void RotateLeft(Node *node);
   void RotateRight(Node *node);
 };
