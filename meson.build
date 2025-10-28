@@ -1,7 +1,7 @@
 project(
   'cse3210',
   ['cpp'],
-  default_options: ['cpp_std=c++20'],
+  default_options: ['cpp_std=c++14'],
   license: 'MIT',
   license_files: 'LICENSE',
   version: '0.1.0',
