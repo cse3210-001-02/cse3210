@@ -1,6 +1,7 @@
 #ifndef AVLTREE_H_
 #define AVLTREE_H_
 
+#include <cstddef>
 template <typename T>
 class AVLTree {
 public:
@@ -19,6 +20,7 @@ public:
   Node *Find(T const &value) const;
   Node *Insert(T const &value);
   bool IsEmpty() const;
+  std::size_t GetSize() const;
   Node *GetPrevious(T const &value) const;
   Node *GetNext(T const &value) const;
   Node *GetUpperBound(T const &value) const;
