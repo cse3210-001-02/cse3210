@@ -21,7 +21,7 @@ public:
     kRightLeft
   };
 
-  AVLTree();
+  AVLTree() = default;
   ~AVLTree() = default;
 
   /**
@@ -35,7 +35,7 @@ public:
   /**
    * 노드의 Imbalance Type 반환
    */
-  ImbalnceType GetImbalanceType(Node *node) const;
+  ImbalanceType GetImbalanceType(Node *node) const;
   Node *Find(T const &value) const;
   Node *Insert(T const &value);
   Node *Erase(T const &value);
@@ -52,15 +52,11 @@ public:
   Node *GetUpperBound(T const &value) const;
 
 private:
-  std::size_t size_;
-  Node *root_;
+  std::size_t size_ = 0;
+  Node *root_ = nullptr;
   void RotateLeft(Node *node);
   void RotateRight(Node *node);
 };
-
-template <typename T>
-AVLTree<T>::AVLTree() : root_(nullptr) {
-}
 
 template <typename T>
 int AVLTree<T>::GetHeight(Node *node) const {
