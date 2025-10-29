@@ -105,7 +105,7 @@ AVLTree<T>::Node *AVLTree<T>::Insert(T const &value) {
   std::function<Node *(Node *)> insert = [&](Node *node) {
     if (node == nullptr) {
       // 노드가 들어갈 위치를 찾음
-      return new Node{};
+      return new Node{1, value, nullptr, nullptr};
     }
 
     if (value < node->value) {
