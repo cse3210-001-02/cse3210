@@ -14,7 +14,7 @@ public:
     Node *right;
   };
 
-  enum ImbalnceType {
+  enum ImbalanceType {
     kLeftLeft,
     kLeftRight,
     kRightRight,
@@ -81,7 +81,7 @@ int AVLTree<T>::GetBalanceFactor(Node *node) const {
 }
 
 template <typename T>
-AVLTree<T>::ImbalnceType AVLTree<T>::GetImbalanceType(Node *node) const {
+AVLTree<T>::ImbalanceType AVLTree<T>::GetImbalanceType(Node *node) const {
   int balance_factor = GetBalanceFactor(node);
 
   // 각 불균형 유형을 반환
