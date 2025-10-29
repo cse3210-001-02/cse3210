@@ -19,6 +19,7 @@ public:
 
   Node *Find(T const &value) const;
   Node *Insert(T const &value);
+  Node *Erase(T const &value);
   bool IsEmpty() const;
   std::size_t GetSize() const;
   Node *GetPrevious(T const &value) const;
