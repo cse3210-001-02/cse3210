@@ -105,9 +105,9 @@ AVLTree<T>::Node *AVLTree<T>::Insert(T const &value) {
     }
 
     if (value < node->value) {
-      return insert(node->left);
+      node->left = insert(node->left);
     } else if (value > node->value) {
-      return insert(node->right);
+      node->right = insert(node->right);
     } else {
       // 중복된 값이 들어오는 경우
       return static_cast<Node *>(nullptr);
