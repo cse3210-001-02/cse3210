@@ -1,9 +1,11 @@
 #include <iostream>
 
 int main() {
-  std::cout << "Hello, world!\n";
+  std::ios_base::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  std::cout.tie(nullptr);
 
-  int A;
+  // TODO: 구현
 
   return 0;
 }

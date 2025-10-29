@@ -4,34 +4,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "clang-tidy",
-      "type": "shell",
-      "command": "./tools/clang-tidy",
-      "args": [
-        "-p",
-        "builddir",
-        "./src/main.cpp",
-      ],
-      "problemMatcher": {
-        "owner": "cpp",
-        "source": "clang-tidy-",
-        "fileLocation": "autoDetect",
-        "pattern": {
-          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)\\s+\\[(.*)\\]$",
-          "file": 1,
-          "line": 2,
-          "column": 3,
-          "severity": 4,
-          "message": 5,
-          "code": 6
-        },
-      },
-      "group": {
-        "kind": "test",
-        "isDefault": true,
-      },
-    },
-    {
       "label": "meson setup",
       "type": "shell",
       "command": "meson",
@@ -60,5 +32,48 @@
       },
       "dependsOn": "meson setup",
     },
+    {
+      "label": "meson test",
+      "type": "shell",
+      "command": "meson",
+      "args": [
+        "test",
+        "-C",
+        "builddir"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+    },
+    {
+      "label": "teco test",
+      "type": "shell",
+      "command": "teco",
+      "args": [
+        "--command",
+        "${workspaceFolder}/builddir/a.out",
+        "--case-dir",
+        "cases"
+      ],
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+    },
+    {
+      "label": "test: all",
+      "type": "shell",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "dependsOn": [
+        "meson build",
+        "meson test",
+        "teco test"
+      ],
+      "dependsOrder": "sequence",
+    }
   ],
 }

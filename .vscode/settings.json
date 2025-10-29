@@ -16,17 +16,20 @@
       "workspace"
     ],
   },
+  "editor.tabSize": 2,
   "files.eol": "\n",
   "[cpp]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
   },
-  "clangd.enable": true,
-  "clang-tidy.executable": "./tools/clang-tidy",
-  "clang-tidy.blacklist": [
-    // "**/*.h"
+  "clangd.arguments": [
+    "--log=verbose",
+    "--clang-tidy=false",
   ],
-  "clang-tidy.buildPath": "./builddir",
-  "editor.tabSize": 2,
+  "clangd.enable": true,
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+  "C_Cpp.codeAnalysis.clangTidy.args": [
+    "--load=${workspaceFolder}/tools/clang-tidy-plugins/header-guard.so"
+  ],
   "todo-tree.general.tags": [
     "[ ]",
     "[x]",
@@ -40,5 +43,7 @@
   ],
   "editor.rulers": [
     80
-  ]
+  ],
+  "C_Cpp.default.compileCommands": "/workspaces/INHA_OSAP_001_T2/builddir/compile_commands.json",
+  "C_Cpp.default.configurationProvider": "mesonbuild.mesonbuild",
 }

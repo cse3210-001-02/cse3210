@@ -1,3 +1,0 @@
-#!/bin/sh
-pwd
-exec clang-tidy --load=./tools/clang-tidy-plugins/header-guard.so --extra-arg=-I./include "$@"
