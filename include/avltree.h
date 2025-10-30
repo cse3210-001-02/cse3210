@@ -142,14 +142,14 @@ AVLTree<T>::Node *AVLTree<T>::Insert(T const &value) {
   };
 
   // 실제 삽입 수행
-  auto node = insert(root_);
+  root_ = insert(root_);
 
   // 삽입에 성공한 경우 크기 증가
-  if (node != nullptr) {
+  if (root_ != nullptr) {
     ++size_;
   }
 
-  return node;
+  return root_;
 }
 
 // 테스트를 위한 인스턴스화
