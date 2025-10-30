@@ -29,14 +29,6 @@ public:
    * 노드의 높이 반환
    */
   int GetHeight(Node *node) const;
-  /**
-   * 노드의 Balance Factor 반환
-   */
-  int GetBalanceFactor(Node *node) const;
-  /**
-   * 노드의 Imbalance Type 반환
-   */
-  ImbalanceType GetImbalanceType(Node *node, T const &value) const;
   Node *Find(T const &value) const;
   Node *Insert(T const &value);
   Node *Erase(T const &value);
@@ -55,6 +47,14 @@ public:
 private:
   std::size_t size_ = 0;
   Node *root_ = nullptr;
+  /**
+   * 노드의 Balance Factor 반환
+   */
+  int GetBalanceFactor(Node *node) const;
+  /**
+   * 노드의 Imbalance Type 반환
+   */
+  ImbalanceType GetImbalanceType(Node *node, T const &value) const;
   Node *RotateLeft(Node *node);
   Node *RotateRight(Node *node);
 };
