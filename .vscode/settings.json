@@ -18,6 +18,9 @@
   },
   "editor.tabSize": 2,
   "files.eol": "\n",
+  "files.associations": {
+    "*.h": "cpp"
+  },
   "[cpp]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
   },

@@ -13,7 +13,8 @@
         "redhat.vscode-yaml",
         "llvm-vs-code-extensions.vscode-clangd",
         "Gruntfuggly.todo-tree",
-        "ms-vscode.cpptools"
+        "ms-vscode.cpptools",
+        "cschlosser.doxdocgen"
       ]
     }
   }

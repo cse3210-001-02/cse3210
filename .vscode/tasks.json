@@ -51,10 +51,11 @@
       "type": "shell",
       "command": "teco",
       "args": [
-        "--command",
-        "${workspaceFolder}/builddir/a.out",
-        "--case-dir",
-        "cases"
+        "--command='${workspaceFolder}/builddir/a.out'",
+        "--case-dir=cases",
+        "--show-diff",
+        "--show-stdout=unknown",
+        "--show-stderr=pass,fail,unknown",
       ],
       "group": {
         "kind": "test",
