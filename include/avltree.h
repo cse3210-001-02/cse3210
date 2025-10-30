@@ -18,7 +18,8 @@ public:
     kLeftLeft,
     kLeftRight,
     kRightRight,
-    kRightLeft
+    kRightLeft,
+    kBalanced
   };
 
   AVLTree() = default;
@@ -35,7 +36,7 @@ public:
   /**
    * 노드의 Imbalance Type 반환
    */
-  ImbalanceType GetImbalanceType(Node *node) const;
+  ImbalanceType GetImbalanceType(Node *node, T const &value) const;
   Node *Find(T const &value) const;
   Node *Insert(T const &value);
   Node *Erase(T const &value);
@@ -54,8 +55,8 @@ public:
 private:
   std::size_t size_ = 0;
   Node *root_ = nullptr;
-  void RotateLeft(Node *node);
-  void RotateRight(Node *node);
+  Node *RotateLeft(Node *node);
+  Node *RotateRight(Node *node);
 };
 
 template <typename T>
@@ -77,23 +78,26 @@ int AVLTree<T>::GetBalanceFactor(Node *node) const {
 }
 
 template <typename T>
-AVLTree<T>::ImbalanceType AVLTree<T>::GetImbalanceType(Node *node) const {
+AVLTree<T>::ImbalanceType AVLTree<T>::GetImbalanceType(Node *node,
+                                                       T const &value) const {
   int balance_factor = GetBalanceFactor(node);
 
   // 각 불균형 유형을 반환
   if (balance_factor > 1) {
-    if (GetBalanceFactor(node->left) >= 0) {
+    if (value < node->left->value) {
       return kLeftLeft;
     } else {
       return kLeftRight;
     }
-  } else {
-    if (GetBalanceFactor(node->right) <= 0) {
+  } else if (balance_factor < -1) {
+    if (value > node->right->value) {
       return kRightRight;
     } else {
       return kRightLeft;
     }
   }
+
+  return kBalanced;
 }
 
 template <typename T>
@@ -117,21 +121,20 @@ AVLTree<T>::Node *AVLTree<T>::Insert(T const &value) {
     node->height = 1 + std::max(GetHeight(node->left), GetHeight(node->right));
 
     // 불균형 검사 및 회전
-    auto imbalance_type = GetImbalanceType(node);
+    auto imbalance_type = GetImbalanceType(node, value);
     switch (imbalance_type) {
     case kLeftLeft:
-      RotateRight(node);
-      break;
+      return RotateRight(node);
     case kLeftRight:
-      RotateLeft(node->left);
-      RotateRight(node);
-      break;
+      node->left = RotateLeft(node->left);
+      return RotateRight(node);
     case kRightRight:
-      RotateLeft(node);
-      break;
+      return RotateLeft(node);
     case kRightLeft:
-      RotateRight(node->right);
-      RotateLeft(node);
+      node->right = RotateRight(node->right);
+      return RotateLeft(node);
+    case kBalanced:
+      // 아무 작업도 수행하지 않음
       break;
     }
 
